@@ -1,0 +1,39 @@
+version: '3'
+services:
+  eureka-server1:
+    image: deloitte/eureka-server
+    networks:
+      springcloud-overlay:
+        aliases:
+          - eureka-server
+    ports:
+      - "8761:8761"
+    environment:
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka-server1:8761/eureka/,http://eureka-server3:8761/eureka/
+
+  eureka-server2:
+    image: binblee/demo-eurekaserver
+    networks:
+      springcloud-overlay:
+        aliases:
+          - eureka-server
+    ports:
+      - "8762:8761"
+    environment:
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka-server1:8761/eureka/,http://eureka-server3:8761/eureka/
+
+  eureka-server3:
+    image: binblee/demo-eurekaserver
+    networks:
+      springcloud-overlay:
+        aliases:
+          - eureka-server
+    ports:
+      - "8763:8761"
+    environment:
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka-server1:8761/eureka/,http://eureka-server3:8761/eureka/
+
+networks:
+  springcloud-overlay:
+    external:
+      name: springcloud-overlay

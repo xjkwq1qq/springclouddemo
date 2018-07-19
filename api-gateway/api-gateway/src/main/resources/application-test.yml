@@ -1,0 +1,28 @@
+#application config
+spring:
+  profiles: test
+
+#register config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.173.44.53:8761/eureka/
+
+#security config
+management:
+  security:
+    enabled: false
+
+#logging
+logging:
+  file: /var/log/api-getway.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    com.deloitte.tac: INFO
+
+access:
+  check:
+    use: true
+    rolePath: "access/access-role-test.json"

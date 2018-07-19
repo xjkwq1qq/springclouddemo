@@ -1,0 +1,50 @@
+#application config
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+server:
+  port: 8083
+  tomcat:
+    uri-encoding: UTF-8
+
+# routes to serviceId
+zuul:
+  servletPath: /
+  add-host-header: true
+  routes:
+    api-a:
+      path: /ars/**
+      serviceId: reporting-service
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 120000
+    connect-timeout-millis: 120000
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+
+#hystrix
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+
+

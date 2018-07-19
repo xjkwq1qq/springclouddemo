@@ -1,0 +1,14 @@
+# application config for prod
+# 启动环境变量添加 spring.profiles.active=prod
+spring:
+  profiles: prod
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.249.111:8761/eureka/
+
+#security config
+management:
+  security:
+    enabled: true

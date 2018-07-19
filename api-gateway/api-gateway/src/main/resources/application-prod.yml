@@ -1,0 +1,28 @@
+#application config
+spring:
+  profiles: prod
+
+#register config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.249.111:8761/eureka/
+
+#security config
+management:
+  security:
+    enabled: true
+
+#logging
+logging:
+  file: /var/log/api-getway.log
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+    com.deloitte.tac: ERROR
+
+access:
+  check:
+    use: true
+    rolePath: "access/access-role-prod.json"

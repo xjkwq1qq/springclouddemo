@@ -1,0 +1,22 @@
+#application config
+spring:
+  profiles: prod
+
+#cloud config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.249.111:8761/eureka/
+
+management:
+  security:
+    enabled: true
+
+#log config
+logging:
+  file: /var/log/eureka-server.log
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+    com.deloitte.tac.dataengine.npc2017: ERROR

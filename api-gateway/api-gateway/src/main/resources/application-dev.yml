@@ -1,0 +1,29 @@
+#application config
+spring:
+  profiles: dev
+
+#register config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#security config
+management:
+  security:
+    enabled: false
+
+#logging
+logging:
+  file: ./log/api-getway.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    com.deloitte.tac: INFO
+
+access:
+  check:
+    use: true
+    rolePath: "access/access-role-dev.json"
+

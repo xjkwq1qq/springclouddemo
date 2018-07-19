@@ -1,0 +1,35 @@
+[
+  {
+    "checkUrls": [
+      "/ars/rest/app/suggestion"
+    ],
+    "passIps": [
+      ".*"
+    ]
+  },
+  {
+    "checkUrls": [
+      "/ars/rest/operation/findInAppStore"
+    ],
+    "passIps": [
+      ".*"
+    ]
+  },
+  {
+    "checkUrls": [
+      "/ars/rest/report/.*",
+      "/ars/rest/operation/.*",
+      "/ars/rest/config/.*",
+      "/ars/rest/app/.*"
+    ],
+    "passIps": [
+      "172.19.48.*"
+    ]
+  },
+  {
+    "checkUrls": [
+      "/ars/swagger-ui.html"
+    ],
+    "passIps": []
+  }
+]

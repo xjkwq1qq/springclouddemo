@@ -1,0 +1,14 @@
+# application config for test
+# 启动环境变量添加 spring.profiles.active=test
+spring:
+  profiles: test
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.173.44.53:8761/eureka/
+
+#security config
+management:
+  security:
+    enabled: false

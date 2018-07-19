@@ -1,0 +1,15 @@
+# application config for uat
+# 启动环境变量添加 spring.profiles.active=uat
+spring:
+  profiles: uat
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.173.40.71:8761/eureka/
+
+
+#security config
+management:
+  security:
+    enabled: true
